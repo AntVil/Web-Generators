@@ -1,0 +1,17 @@
+main>form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+aside>section{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+#result{
+    overflow-y: scroll;
+    height: 100px;
+    border: 1px solid #000000;
+}

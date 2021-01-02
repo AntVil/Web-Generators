@@ -1,0 +1,67 @@
+:root {
+    --colorPaletteColor1: #0276e2;
+    --colorPaletteColor2: #557daa;
+    --colorPaletteColor3: #AAAAAA;
+    --colorPaletteColor4: #FF9900;
+    --colorPaletteColor5: #00b0f5;
+    --colorPaletteColor6: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --colorPaletteColor1: #0276e2;
+        --colorPaletteColor2: #49678a;
+        --colorPaletteColor3: #333333;
+        --colorPaletteColor4: #d47f00;
+        --colorPaletteColor5: #003f69;
+        --colorPaletteColor6: #dddddd;
+    }
+}
+
+* {
+    color: var(--colorPaletteColor6);
+    transition: all 1s;
+}
+
+@media (prefers-reduced-motion) {
+    * {
+        transition: none;
+    }
+}
+
+body{
+    overflow-y: scroll;
+    scrollbar-color: var(--colorPaletteColor5) var(--colorPaletteColor4);
+}
+
+body::-webkit-scrollbar {
+    background-color: var(--colorPaletteColor5);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--colorPaletteColor4);
+}
+
+header {
+    background-color: var(--colorPaletteColor1);
+}
+
+nav {
+    background-color: var(--colorPaletteColor2);
+}
+
+main {
+    background-color: var(--colorPaletteColor3);
+}
+
+aside{
+    background-color: var(--colorPaletteColor2);
+}
+
+footer {
+    background-color: var(--colorPaletteColor1);
+}
+
+a{
+    color: var(--colorPaletteColor4)
+}

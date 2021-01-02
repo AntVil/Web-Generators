@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Web-Generators-scrollbar</title>
+
+    <link rel="stylesheet" href="../../generic-styles/layout.css" />
+    <link rel="stylesheet" href="../../generic-styles/style.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Web-Generators-scrollbar</h1>
+    </header>
+
+    <nav>
+        <div>
+            <ul>
+                <li><a href="../../index.html">home</a></li>
+                <li><a href="../../generators/scrollbar/index.html">scrollbar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <form>
+            <label for="thumbRadius">thumb-border-radius</label>
+            <input id="thumbRadiusInput" name="thumbRadius" type="range" min="0" max="100" step="1" />
+            <label for="trackRadius">track-border-radius</label>
+            <input id="trackRadiusInput" name="trackRadius" type="range" min="0" max="100" step="1" />
+            <label for="thumbWidth">thumb-width</label>
+            <input id="thumbWidthInput" name="thumbWidth" type="range" min="0" max="100" step="1" />
+            <label for="trackWidth">track-width</label>
+            <input id="trackWidthInput" name="trackWidth" type="range" min="0" max="100" step="1" />
+            <input type="color" />
+        </form>
+    </main>
+
+    <aside>
+        <section>
+            <div id="result">
+                hello<br>
+                hello<br>
+                hello<br>
+                hello<br>
+                hello<br>
+                hello<br>
+                hello<br>
+                hello<br>
+            </div>
+
+            <textarea id="resultCode"></textarea>
+
+           <button onclick="copyCodeToClipboard()">to clipboard</button> 
+        </section>
+    </aside>
+
+    <footer>
+        <h6>created by AntVil</h6>
+    </footer>
+</body>
+
+</html>
