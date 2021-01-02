@@ -5,24 +5,24 @@ class Style {
 
     createForm(restrictions) {
         let form = document.createElement("form");
-        for (let i = 0; i < this.properties.length; i++) {
-            let elements = this.properties[i].createInput(restrictions);
-            for (let j = 0; j < elements.length; j++) {
-                form.appendChild(elements[j]);
+        if(restrictions.length !== 0){
+            for (let i = 0; i < this.properties.length; i++) {
+                let elements = this.properties[i].createInput(restrictions);
+                for (let j = 0; j < elements.length; j++) {
+                    form.appendChild(elements[j]);
+                }
             }
         }
         return form;
     }
 
-    getResultCode(restrictions) {
+    getResultCode() {
         let dict = {};
 
         for (let i = 0; i < this.properties.length; i++) {
             let propertyFractions = this.properties[i].getPropertyFractions();
             for (let j = 0; j < propertyFractions.length; j++) {
                 let p = propertyFractions[j];
-                console.log(p);
-
                 if (dict[p["elementPrefix"]] === undefined) {
                     dict[p["elementPrefix"]] = {};
                 }
@@ -30,50 +30,31 @@ class Style {
                     dict[p["elementPrefix"]][p["propertyName"]] = [];
                 }
                 dict[p["elementPrefix"]][p["propertyName"]][p["propertyValueAssign"]] = p["value"];
-
-
-                //dict[p["elementPrefix"]] = p["value"];//[p["propertyName"]][p["propertyValueAssign"]] = p["value"];
-                //dict[p["elementPrefix"]][p["propertyName"]] = p["value"];
-                //dict[p["elementPrefix"]] = p["value"];//[p["propertyName"]][p["propertyValueAssign"]] = p["value"];
             }
         }
 
         let code = "";
 
+        let prefixes = Object.keys(dict);
+        for(let i=0;i<prefixes.length;i++){
+            let code_ = `\n#result${prefixes[i]}{\n`;
+
+            let propertyNames = Object.keys(dict[prefixes[i]]);
+            for(let j=0;j<propertyNames.length;j++){
+                code_ += `    ${propertyNames[j]}: ${dict[prefixes[i]][propertyNames[j]].join(" ")};\n`
+            }
+
+            code_ += "}\n"
+            code += code_;
+        }
+
 
         return code;
     }
-}
 
-
-//dict
-let x = {
-    elementPrefix: {
-        propertyName: [
-            "",
-            ""
-        ]
-    },
-    elementPrefix: [],
-    elementPrefix: [],
-    elementPrefix: [],
-};
-
-
-
-
-//property.getPropertyFractions
-[
-    {
-        elementPrefix: "",
-        propertyName: "",
-        propertyValueAssign: 0,
-        value: ""
-    },
-    {
-        elementPrefix: "",
-        propertyName: "",
-        propertyValueAssign: 0,
-        value: ""
+    setRandom(){
+        for(let i=0;i<this.properties.length;i++){
+            this.properties[i].setRandom();
+        }
     }
-]
+}

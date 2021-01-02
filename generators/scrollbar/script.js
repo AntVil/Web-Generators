@@ -24,7 +24,7 @@ window.onload = function () {
             {
                 browsers: ["firefox"],
                 elementPrefix: "",
-                propertyName: "background-color",
+                propertyName: "scrollbar-color",
                 propertyValueAssign: 0,
                 translation: function(val){
                     return val;
@@ -46,7 +46,7 @@ window.onload = function () {
             {
                 browsers: ["firefox"],
                 elementPrefix: "",
-                propertyName: "background-color",
+                propertyName: "scrollbar-color",
                 propertyValueAssign: 1,
                 translation: function(val){
                     return val;
@@ -56,7 +56,7 @@ window.onload = function () {
         new Property("thumb-radius", {
             type: "range",
             min: 0,
-            max: 25
+            max: 15
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
@@ -71,7 +71,7 @@ window.onload = function () {
         new Property("track-radius", {
             type: "range",
             min: 0,
-            max: 25
+            max: 15
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
@@ -85,16 +85,29 @@ window.onload = function () {
         ]),
         new Property("thumb-width", {
             type: "range",
-            min: 0,
+            min: 15,
             max: 25
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
                 elementPrefix: "::-webkit-scrollbar-thumb",
-                propertyName: "border-radius",
+                propertyName: "border",
                 propertyValueAssign: 0,
                 translation: function(val){
-                    return val + "px";
+                    return (25 - val) + "px solid transparent";
+                }
+            }
+        ]),
+        new Property("", {
+            type: "constant",
+        }, [
+            {
+                browsers: ["chrome", "edge", "opera"],
+                elementPrefix: "::-webkit-scrollbar-thumb",
+                propertyName: "background-clip",
+                propertyValueAssign: 0,
+                translation: function(val){
+                    return "content-box";
                 }
             }
         ]),
@@ -106,7 +119,7 @@ window.onload = function () {
             {
                 browsers: ["chrome", "edge", "opera"],
                 elementPrefix: "::-webkit-scrollbar",
-                propertyName: "border-radius",
+                propertyName: "width",
                 propertyValueAssign: 0,
                 translation: function(val){
                     return val + "px";
@@ -130,7 +143,7 @@ window.onload = function () {
         ]),
     ]);
 
-    document.getElementById("inputs").appendChild(style.createForm(["chrome"]));
+    updateForm();
 
     loop();
 }
@@ -139,14 +152,41 @@ function loop() {
     let code = style.getResultCode();
     if (resultStyleElement.innerHTML !== code) {
         resultStyleElement.innerHTML = code;
-        resultCodeElement.innerText = code;
+        resultCodeElement.value = code.trim();
     }
 
-    //requestAnimationFrame(loop);
+    requestAnimationFrame(loop);
 }
 
 
+function updateForm(){
+    let support = [];
+    if(document.getElementById("chromeSupport").checked){
+        support.push("chrome");
+    }
+    if(document.getElementById("edgeSupport").checked){
+        support.push("edge");
+    }
+    if(document.getElementById("firefoxSupport").checked){
+        support.push("firefox");
+    }
+    if(document.getElementById("operaSupport").checked){
+        support.push("opera");
+    }
+
+    document.getElementById("inputs").innerHTML = "";
+    document.getElementById("inputs").appendChild(style.createForm(support));
+    style.setRandom();
+}
+
+function setRandom(){
+    style.setRandom();
+}
+
 function copyCodeToClipboard() {
+    document.getElementById("resultCode").disabled = false;
     document.getElementById("resultCode").select();
     document.execCommand("copy");
+    document.getSelection().removeAllRanges();
+    document.getElementById("resultCode").disabled = true;
 }

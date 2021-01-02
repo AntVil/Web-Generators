@@ -37,10 +37,12 @@ body{
 
 body::-webkit-scrollbar {
     background-color: var(--colorPaletteColor5);
+    width: 20px;
 }
 
 body::-webkit-scrollbar-thumb {
     background-color: var(--colorPaletteColor4);
+    width: 30px;
 }
 
 header {
@@ -71,4 +73,8 @@ button{
     background-color: var(--colorPaletteColor1);
     border-color: var(--colorPaletteColor5);
     border-radius: 5px;
+}
+
+textarea{
+    background-color: var(--colorPaletteColor3);
 }

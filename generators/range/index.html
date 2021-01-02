@@ -22,7 +22,7 @@
 
 <body>
     <header>
-        <h1>Web-Generators-scrollbar</h1>
+        <h1>Web-Generators-range</h1>
     </header>
 
     <nav>
@@ -46,7 +46,7 @@
 
             <input id="chromeSupport" name="chromeSupport" type="checkbox" onchange="updateForm()" checked />
             <input id="edgeSupport" name="edgeSupport" type="checkbox" onchange="updateForm()" checked />
-            <input id="firefoxSupport" name="firefoxSupport" type="checkbox" onchange="updateForm()" />
+            <input id="firefoxSupport" name="firefoxSupport" type="checkbox" onchange="updateForm()" checked />
             <input id="operaSupport" name="operaSupport" type="checkbox" onchange="updateForm()" checked />
         </form>
 
@@ -64,16 +64,7 @@
 
     <aside>
         <section>
-            <div id="result">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
+            <input id="result" type="range" />
 
             <textarea id="resultCode" disabled></textarea>
 

@@ -1,6 +1,7 @@
 main>form{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
 }
 
 main>section>form{
@@ -10,16 +11,15 @@ main>section>form{
 }
 
 aside>section{
-    position: -webkit-sticky;
-    position: sticky;
-    top: 50%;
-    transform: translate(0%, -50%);
-
     display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr 1fr 30px;
+
     gap: 5px;
 }
 
 aside>section>textarea{
+    height: 100px;
     resize: none;
 }
 
@@ -29,4 +29,18 @@ aside>section>textarea{
     border: 1px solid #000000;
 
     scrollbar-width: thin;
+}
+
+#randomButton{
+    width: 100%;
+    font-size: large;
+}
+
+@media screen and (min-width: 750px) {
+    aside>section{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 50%;
+        transform: translate(0%, -50%);
+    }
 }

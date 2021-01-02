@@ -1,0 +1,106 @@
+main>form{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+
+main>section>form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 40px;
+}
+
+aside>section{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr 1fr 30px;
+
+    gap: 5px;
+}
+
+aside>section>textarea{
+    height: 100px;
+    resize: none;
+}
+
+#result{
+    position: relative;
+    width: 80% !important;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#randomButton{
+    width: 100%;
+    font-size: large;
+}
+
+@media screen and (min-width: 750px) {
+    aside>section{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 50%;
+        transform: translate(0%, -50%);
+    }
+}
+
+
+
+
+
+
+
+/*
+
+input[type=range] {
+    width: 100%;
+    margin: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background: var(--accentColor1);
+    background: linear-gradient(270deg, var(--accentColor1) 0%, var(--accentColor2) 100%);
+    border-radius: 5px;
+    width: 100%;
+    height: calc(var(--screenWidth) / 50);
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    margin-top: 0;
+    width: calc(var(--screenWidth) / 50);
+    height: calc(var(--screenWidth) / 50);
+    background-color: var(--buttonColor);
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb:hover{
+    background-color: var(--hoverColor);
+}
+
+input[type=range]::-moz-range-track {
+    background: var(--accentColor1);
+    background: linear-gradient(270deg, var(--accentColor1) 0%, var(--accentColor2) 100%);
+    border-radius: 5px;
+    width: 100%;
+    height: calc(var(--screenWidth) / 50);
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    margin-top: 0;
+    width: calc(var(--screenWidth) / 50);
+    height: calc(var(--screenWidth) / 50);
+    background-color: var(--buttonColor);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb:hover{
+    background-color: var(--hoverColor);
+}
