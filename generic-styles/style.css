@@ -1,7 +1,7 @@
 :root {
-    --colorPaletteColor1: #0276e2;
-    --colorPaletteColor2: #557daa;
-    --colorPaletteColor3: #AAAAAA;
+    --colorPaletteColor1: #188efd;
+    --colorPaletteColor2: #0055b6;
+    --colorPaletteColor3: #DDDDDD;
     --colorPaletteColor4: #FF9900;
     --colorPaletteColor5: #00b0f5;
     --colorPaletteColor6: #000000;
@@ -31,7 +31,8 @@
 
 body{
     overflow-y: scroll;
-    scrollbar-color: var(--colorPaletteColor5) var(--colorPaletteColor4);
+    scrollbar-color: var(--colorPaletteColor4) var(--colorPaletteColor5);
+    scrollbar-width: auto;
 }
 
 body::-webkit-scrollbar {
@@ -39,7 +40,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: var(--colorPaletteColor4);
+    background-color: var(--colorPaletteColor4);
 }
 
 header {
@@ -64,4 +65,10 @@ footer {
 
 a{
     color: var(--colorPaletteColor4)
+}
+
+button{
+    background-color: var(--colorPaletteColor1);
+    border-color: var(--colorPaletteColor5);
+    border-radius: 5px;
 }
