@@ -148,43 +148,40 @@ window.onload = function () {
             }
         ]),
         new Property("", {
-            type: "constant"
+            type: "calculation",
+            properties: ["thumb-border-width", "thumb-height", "track-border-width", "track-height"]
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
                 elementPrefix: "::-webkit-slider-thumb",
-                propertyName: "transform",
+                propertyName: "margin-top",
                 propertyValueAssign: 0,
-                translation: function(val){
-                    return "translate(0%, -50%)";
+                translation: function(thumbBorderWidth, thumbHeight, trackBorderWidth, trackHeight){
+                    if(trackBorderWidth > trackHeight / 2){
+                        if(thumbBorderWidth > thumbHeight / 2){
+                            return ((trackHeight - thumbHeight) / 2 - trackBorderWidth + (trackBorderWidth - trackHeight / 2) - (thumbBorderWidth - thumbHeight / 2)) + "px";
+                        }else{
+                            return ((trackHeight - thumbHeight) / 2 - trackBorderWidth + (trackBorderWidth - trackHeight / 2)) + "px";
+                        }
+                    }else{
+                        if(thumbBorderWidth > thumbHeight / 2){
+                            return ((trackHeight - thumbHeight) / 2 - trackBorderWidth - (thumbBorderWidth - thumbHeight / 2)) + "px";
+                        }else{
+                            return ((trackHeight - thumbHeight) / 2 - trackBorderWidth) + "px";
+                        }
+                    }
                 }
             },
-        ]),
-        new Property("", {
-            type: "constant"
-        }, [
             {
-                browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
-                propertyName: "position",
+                browsers: ["firefox"],
+                ignore: true,
+                elementPrefix: "",
+                propertyName: "",
                 propertyValueAssign: 0,
-                translation: function(val){
-                    return "relative";
+                translation: function(){
+                    return;
                 }
-            },
-        ]),
-        new Property("", {
-            type: "constant"
-        }, [
-            {
-                browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
-                propertyName: "top",
-                propertyValueAssign: 0,
-                translation: function(val){
-                    return "50%";
-                }
-            },
+            }
         ]),
         new Property("", {
             type: "constant"
