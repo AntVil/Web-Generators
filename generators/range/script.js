@@ -7,14 +7,13 @@ window.onload = function () {
     resultStyleElement = document.getElementById("resultStyle");
     resultCodeElement = document.getElementById("resultCode");
 
-
     style = new Style([
         new Property("", {
             type: "constant"
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -23,7 +22,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "background",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -31,58 +30,12 @@ window.onload = function () {
                 }
             }
         ]),
-        /*
         new Property("", {
             type: "constant"
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-runnable-track",
-                propertyName: "cursor",
-                propertyValueAssign: 0,
-                translation: function(val){
-                    return "pointer;";
-                }
-            },
-            {
-                browsers: ["firefox"],
-                elementPrefix: "::-moz-range-track",
-                propertyName: "cursor",
-                propertyValueAssign: 0,
-                translation: function(val){
-                    return "pointer;";
-                }
-            }
-        ]),
-        new Property("", {
-            type: "constant"
-        }, [
-            {
-                browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
-                propertyName: "cursor",
-                propertyValueAssign: 0,
-                translation: function(val){
-                    return "pointer;";
-                }
-            },
-            {
-                browsers: ["firefox"],
-                elementPrefix: "::-moz-range-thumb",
-                propertyName: "cursor",
-                propertyValueAssign: 0,
-                translation: function(val){
-                    return "pointer;";
-                }
-            }
-        ]),
-        */
-        new Property("", {
-            type: "constant"
-        }, [
-            {
-                browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "-webkit-appearance",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -95,7 +48,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
+                elementPrefix: ".result::-webkit-slider-thumb",
                 propertyName: "-webkit-appearance",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -108,7 +61,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-runnable-track",
+                elementPrefix: ".result::-webkit-slider-runnable-track",
                 propertyName: "border-style",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -117,7 +70,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-track",
+                elementPrefix: ".result::-moz-range-track",
                 propertyName: "border-style",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -130,7 +83,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
+                elementPrefix: ".result::-webkit-slider-thumb",
                 propertyName: "border-style",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -139,7 +92,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-thumb",
+                elementPrefix: ".result::-moz-range-thumb",
                 propertyName: "border-style",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -153,7 +106,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
+                elementPrefix: ".result::-webkit-slider-thumb",
                 propertyName: "margin-top",
                 propertyValueAssign: 0,
                 translation: function(thumbBorderWidth, thumbHeight, trackBorderWidth, trackHeight){
@@ -188,7 +141,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -197,7 +150,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "width",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -210,7 +163,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -219,7 +172,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-track",
+                elementPrefix: ".result::-moz-range-track",
                 propertyName: "width",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -232,7 +185,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
+                elementPrefix: ".result::-webkit-slider-thumb",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -241,7 +194,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-thumb",
+                elementPrefix: ".result::-moz-range-thumb",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -254,7 +207,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-runnable-track",
+                elementPrefix: ".result::-webkit-slider-runnable-track",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -263,7 +216,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-track",
+                elementPrefix: ".result::-moz-range-track",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -276,7 +229,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["edge"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -285,7 +238,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-progress",
+                elementPrefix: ".result::-moz-range-progress",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -298,7 +251,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
+                elementPrefix: ".result::-webkit-slider-thumb",
                 propertyName: "border-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -307,7 +260,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-thumb",
+                elementPrefix: ".result::-moz-range-thumb",
                 propertyName: "border-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -320,7 +273,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-runnable-track",
+                elementPrefix: ".result::-webkit-slider-runnable-track",
                 propertyName: "border-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -329,7 +282,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-track",
+                elementPrefix: ".result::-moz-range-track",
                 propertyName: "border-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -344,7 +297,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
+                elementPrefix: ".result::-webkit-slider-thumb",
                 propertyName: "border-width",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -353,7 +306,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-thumb",
+                elementPrefix: ".result::-moz-range-thumb",
                 propertyName: "border-width",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -368,7 +321,25 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-runnable-track",
+                elementPrefix: ".result::-webkit-slider-runnable-track",
+                propertyName: "border-width",
+                propertyValueAssign: 0,
+                translation: function(val){
+                    return val + "px";
+                }
+            },
+            {
+                browsers: ["chrome", "edge", "opera"],
+                elementPrefix: ".result::-webkit-slider-runnable-track",
+                propertyName: "border-width",
+                propertyValueAssign: 1,
+                translation: function(val){
+                    return Math.min(val, 5) + "px";
+                }
+            },
+            {
+                browsers: ["firefox"],
+                elementPrefix: ".result::-moz-range-track",
                 propertyName: "border-width",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -377,11 +348,11 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-track",
+                elementPrefix: ".result::-moz-range-track",
                 propertyName: "border-width",
-                propertyValueAssign: 0,
+                propertyValueAssign: 1,
                 translation: function(val){
-                    return val + "px";
+                    return Math.min(val, 5) + "px";
                 }
             }
         ]),
@@ -392,7 +363,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
+                elementPrefix: ".result::-webkit-slider-thumb",
                 propertyName: "border-radius",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -401,7 +372,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-thumb",
+                elementPrefix: ".result::-moz-range-thumb",
                 propertyName: "border-radius",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -416,7 +387,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-runnable-track",
+                elementPrefix: ".result::-webkit-slider-runnable-track",
                 propertyName: "border-radius",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -425,7 +396,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-track",
+                elementPrefix: ".result::-moz-range-track",
                 propertyName: "border-radius",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -440,7 +411,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["edge"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -449,7 +420,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-progress",
+                elementPrefix: ".result::-moz-range-progress",
                 propertyName: "border-radius",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -460,11 +431,11 @@ window.onload = function () {
         new Property("thumb-width", {
             type: "range",
             min: 0,
-            max: 25
+            max: 40
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
+                elementPrefix: ".result::-webkit-slider-thumb",
                 propertyName: "width",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -473,7 +444,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-thumb",
+                elementPrefix: ".result::-moz-range-thumb",
                 propertyName: "width",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -484,11 +455,11 @@ window.onload = function () {
         new Property("thumb-height", {
             type: "range",
             min: 0,
-            max: 25
+            max: 40
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-thumb",
+                elementPrefix: ".result::-webkit-slider-thumb",
                 propertyName: "height",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -497,7 +468,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-thumb",
+                elementPrefix: ".result::-moz-range-thumb",
                 propertyName: "height",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -508,11 +479,11 @@ window.onload = function () {
         new Property("track-height", {
             type: "range",
             min: 0,
-            max: 25
+            max: 40
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-slider-runnable-track",
+                elementPrefix: ".result::-webkit-slider-runnable-track",
                 propertyName: "height",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -521,7 +492,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-track",
+                elementPrefix: ".result::-moz-range-track",
                 propertyName: "height",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -532,11 +503,11 @@ window.onload = function () {
         new Property("progress-height", {
             type: "range",
             min: 0,
-            max: 25
+            max: 40
         }, [
             {
                 browsers: ["edge"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -545,7 +516,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "::-moz-range-progress",
+                elementPrefix: ".result::-moz-range-progress",
                 propertyName: "height",
                 propertyValueAssign: 0,
                 translation: function(val){

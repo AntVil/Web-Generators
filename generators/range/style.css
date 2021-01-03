@@ -23,7 +23,7 @@ aside>section>textarea{
     resize: none;
 }
 
-#result{
+.result{
     position: relative;
     width: 80% !important;
     left: 50%;

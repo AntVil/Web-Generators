@@ -37,7 +37,7 @@ class Style {
 
         let prefixes = Object.keys(dict);
         for(let i=0;i<prefixes.length;i++){
-            let code_ = `\n#result${prefixes[i]}{\n`;
+            let code_ = `\n${prefixes[i]}{\n`;
 
             let propertyNames = Object.keys(dict[prefixes[i]]);
             for(let j=0;j<propertyNames.length;j++){

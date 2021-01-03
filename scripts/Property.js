@@ -47,16 +47,20 @@ class Property {
             }
 
             if (this.specification.type === "calculation") {
-                let values = [];
-                for (let j = 0; j < this.specification.properties.length; j++) {
-                    values.push(document.getElementById(this.specification.properties[j]).value);
+                try{
+                    let values = [];
+                    for (let j = 0; j < this.specification.properties.length; j++) {
+                        values.push(document.getElementById(this.specification.properties[j]).value);
+                    }
+                    propertyFractions.push({
+                        elementPrefix: property.elementPrefix,
+                        propertyName: property.propertyName,
+                        propertyValueAssign: property.propertyValueAssign,
+                        value: property.translation(...values)
+                    });
+                }catch(e){
+
                 }
-                propertyFractions.push({
-                    elementPrefix: property.elementPrefix,
-                    propertyName: property.propertyName,
-                    propertyValueAssign: property.propertyValueAssign,
-                    value: property.translation(...values)
-                });
             } else {
                 let value;
                 if (this.specification.type !== "constant") {

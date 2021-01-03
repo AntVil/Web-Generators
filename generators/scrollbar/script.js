@@ -14,7 +14,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-scrollbar-thumb",
+                elementPrefix: ".result::-webkit-scrollbar-thumb",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -23,7 +23,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "scrollbar-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -36,7 +36,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-scrollbar",
+                elementPrefix: ".result::-webkit-scrollbar",
                 propertyName: "background-color",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -45,7 +45,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "scrollbar-color",
                 propertyValueAssign: 1,
                 translation: function(val){
@@ -60,7 +60,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-scrollbar-thumb",
+                elementPrefix: ".result::-webkit-scrollbar-thumb",
                 propertyName: "border-radius",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -75,7 +75,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-scrollbar",
+                elementPrefix: ".result::-webkit-scrollbar",
                 propertyName: "border-radius",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -90,7 +90,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-scrollbar-thumb",
+                elementPrefix: ".result::-webkit-scrollbar-thumb",
                 propertyName: "border",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -103,7 +103,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-scrollbar-thumb",
+                elementPrefix: ".result::-webkit-scrollbar-thumb",
                 propertyName: "background-clip",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -118,7 +118,7 @@ window.onload = function () {
         }, [
             {
                 browsers: ["chrome", "edge", "opera"],
-                elementPrefix: "::-webkit-scrollbar",
+                elementPrefix: ".result::-webkit-scrollbar",
                 propertyName: "width",
                 propertyValueAssign: 0,
                 translation: function(val){
@@ -127,7 +127,7 @@ window.onload = function () {
             },
             {
                 browsers: ["firefox"],
-                elementPrefix: "",
+                elementPrefix: ".result",
                 propertyName: "scrollbar-width",
                 propertyValueAssign: 0,
                 translation: function(val){
